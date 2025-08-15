@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Crypto VASP Compliance Self-Assessment</title>
-  <meta name="description" content="Crypto VASP Compliance Self-Assessment">
+  <title>Crypto VASP Compliance Self‑Assessment</title>
+  <meta name="description" content="Crypto VASP Compliance Self‑Assessment">
   <style>
     :root{
       --bg:#0b1220; --card:#111a2e; --ink:#e6ebff; --muted:#98a2b3; --brand:#4f46e5; --ring: 0 0 0 3px rgba(79,70,229,.35);
@@ -51,7 +51,7 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>Crypto VASP Compliance Self-Assessment</h1>
+      <h1>Crypto VASP Compliance Self‑Assessment</h1>
       <span class="badge" id="saveState">Draft not saved</span>
     </header>
 
@@ -84,12 +84,10 @@
         </div>
       </section>
 
-      <!-- 1. Regulatory Licenses -->
+            <!-- 1. Regulatory Licenses -->
       <fieldset>
         <legend>1. Regulatory Licenses</legend>
-        <p class="muted">
-          Do you hold required licenses/registrations in your operating jurisdictions? Do you hold required licenses, exemptions, or sandbox approvals in your operating jurisdictions?
-        </p>
+        <p class="muted">Do you hold required licenses/registrations in your operating jurisdictions?</p>
         <label><input type="radio" name="licensing_status" value="full" required> Yes, fully licensed in all jurisdictions</label>
         <label><input type="radio" name="licensing_status" value="partial"> Partially licensed (specify which missing): <input name="licensing_partial" type="text" placeholder="Jurisdictions missing" /></label>
         <label><input type="radio" name="licensing_status" value="none"> No licenses held</label>
@@ -131,9 +129,7 @@
       <!-- 3. Customer Fund Protection -->
       <fieldset>
         <legend>3. Customer Fund Protection</legend>
-        <p class="muted">
-          Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?
-        </p>
+        <p class="muted">Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?</p>
         <label>Custodian (if any)
           <input name="custodian" type="text" placeholder="e.g., Fireblocks, Anchorage" />
         </label>
@@ -168,7 +164,7 @@
       <fieldset>
         <legend>5. Geographic Restrictions</legend>
         <p class="muted">Do you block prohibited jurisdictions (US, sanctioned countries)?</p>
-        <label><input type="radio" name="geo_block" value="full" required> Yes, comprehensive geo-blocking</label>
+        <label><input type="radio" name="geo_block" value="full" required> Yes, comprehensive geo‑blocking</label>
         <label><input type="radio" name="geo_block" value="partial"> Partial restrictions</label>
         <label><input type="radio" name="geo_block" value="none"> No restrictions</label>
         <label><input type="radio" name="geo_block" value="dev"> Under development</label>
@@ -177,7 +173,7 @@
           <input name="prohibited_list" type="text" placeholder="e.g., US, DPRK, Iran" />
         </label>
         <div>
-          <span class="muted">Geo-blocking enforced via:</span>
+          <span class="muted">Geo‑blocking enforced via:</span>
           <label><input type="checkbox" name="enforce_ip" value="ip"> IP filtering</label>
           <label><input type="checkbox" name="enforce_wallet" value="wallet"> Wallet screening</label>
           <label><input type="checkbox" name="enforce_list" value="list"> List enforcement tools</label>
@@ -229,7 +225,7 @@
       <fieldset>
         <legend>8. Banking & Key Vendors</legend>
         <p class="muted">Do you have established banking relationships and compliance vendors?</p>
-        <label><input type="radio" name="banking" value="tier1" required> Yes, tier-1 banks and compliance tools</label>
+        <label><input type="radio" name="banking" value="tier1" required> Yes, tier‑1 banks and compliance tools</label>
         <label><input type="radio" name="banking" value="regional"> Regional banks, basic tools</label>
         <label><input type="radio" name="banking" value="limited"> Limited banking, developing tools</label>
         <label><input type="radio" name="banking" value="none"> No stable banking relationships</label>
@@ -242,7 +238,7 @@
             <select name="ramps">
               <option value="">— Select —</option>
               <option value="internal">Internal</option>
-              <option value="partner">Third-party partner</option>
+              <option value="partner">Third‑party partner</option>
             </select>
           </label>
         </div>
@@ -254,6 +250,7 @@
       <!-- 9. Financial Controls -->
       <fieldset>
         <legend>9. Financial Controls</legend>
+        <p class="muted">Are you audited and maintain proper financial controls?</p>
         <label><input type="radio" name="fin_controls" value="big4_clean" required> Yes, Big 4 audited with clean opinion</label>
         <label><input type="radio" name="fin_controls" value="regional"> Regional firm audited</label>
         <label><input type="radio" name="fin_controls" value="documented"> Documented internal controls with review</label>
@@ -266,6 +263,7 @@
       <!-- 10. Regulatory Readiness -->
       <fieldset>
         <legend>10. Regulatory Readiness</legend>
+        <p class="muted">Are you prepared for upcoming regulatory changes?</p>
         <label><input type="radio" name="reg_ready" value="active" required> Yes, actively monitoring and adapting</label>
         <label><input type="radio" name="reg_ready" value="aware"> Aware of changes, planning adaptation</label>
         <label><input type="radio" name="reg_ready" value="limited"> Limited awareness</label>
@@ -281,9 +279,10 @@
         </label>
       </fieldset>
 
-      <!-- 11. Token / Asset Risk Classification -->
+      <!-- 11. Token or Asset Risk Classification -->
       <fieldset>
         <legend>11. Token or Asset Risk Classification</legend>
+        <p class="muted">Do you maintain a framework for determining whether an asset is a security or requires regulatory treatment?</p>
         <label><input type="radio" name="token_framework" value="internal" required> Yes, internal legal opinion framework</label>
         <label><input type="radio" name="token_framework" value="external"> Yes, external counsel reviews</label>
         <label><input type="radio" name="token_framework" value="none"> No formal framework</label>
@@ -293,6 +292,7 @@
       <!-- 12. Disclosures & Transparency -->
       <fieldset>
         <legend>12. Disclosures & Transparency</legend>
+        <p class="muted">Do you provide public financial or operational disclosures (e.g., proof-of-reserves, attestation reports, risk disclosures)?</p>
         <label><input type="radio" name="disclosures" value="monthly" required> Yes, monthly / quarterly</label>
         <label><input type="radio" name="disclosures" value="annual"> Yes, annually</label>
         <label><input type="radio" name="disclosures" value="none"> No public disclosures</label>
@@ -304,7 +304,7 @@
           <button type="button" id="printBtn">Save/Print PDF</button>
           <button type="reset" id="resetBtn">Reset</button>
         </div>
-        <div class="footer">Disclaimer: This self-assessment is for informational purposes only and does not constitute legal advice.</div>
+        <div class="footer">Disclaimer: This self‑assessment is for informational purposes only and does not constitute legal advice.</div>
       </div>
     </form>
   </div>
@@ -315,7 +315,6 @@
     const exportBtn = document.getElementById('exportBtn');
     const printBtn = document.getElementById('printBtn');
 
-    // --- Autosave draft in localStorage ---
     const KEY = 'vasp_self_assessment_v1';
     function saveDraft(){ localStorage.setItem(KEY, JSON.stringify(Object.fromEntries(new FormData(form)))); saveBadge.textContent='Draft saved'; }
     function loadDraft(){ const raw=localStorage.getItem(KEY); if(!raw) return; const data=JSON.parse(raw); for(const [k,v] of Object.entries(data)){ const el=form.elements[k]; if(!el) continue; if(el instanceof RadioNodeList){
@@ -332,7 +331,6 @@
     form.addEventListener('input', ()=>{ saveDraft(); });
     document.getElementById('resetBtn').addEventListener('click', ()=>{ setTimeout(()=>{ clearDraft(); }, 0); });
 
-    // --- Export JSON ---
     exportBtn.addEventListener('click', ()=>{
       const data = Object.fromEntries(new FormData(form));
       data.__exportedAt = new Date().toISOString();
@@ -343,10 +341,8 @@
       document.body.appendChild(a); a.click(); a.remove();
     });
 
-    // --- Print / Save PDF ---
     printBtn.addEventListener('click', ()=>{ window.print(); });
 
-    // Load draft on first paint
     loadDraft();
   </script>
 </body>
