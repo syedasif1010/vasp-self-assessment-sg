@@ -7,8 +7,7 @@
   <meta name="description" content="Crypto VASP Compliance Self-Assessment">
   <style>
     :root{
-      --bg:#0b1220; --card:#111a2e; --ink:#e6ebff; --muted:#98a2b3; --brand:#4f46e5; --ok:#16a34a; --warn:#f59e0b; --bad:#ef4444;
-      --ring: 0 0 0 3px rgba(79,70,229,.35);
+      --bg:#0b1220; --card:#111a2e; --ink:#e6ebff; --muted:#98a2b3; --brand:#4f46e5; --ring: 0 0 0 3px rgba(79,70,229,.35);
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;}
@@ -130,8 +129,10 @@
       <!-- 3. Customer Fund Protection -->
       <fieldset>
         <legend>3. Customer Fund Protection</legend>
-        <p class="muted">Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?</p>
-        <label>Custodian (if any) 
+        <p class="muted">
+          Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?
+        </p>
+        <label>Custodian (if any)
           <input name="custodian" type="text" placeholder="e.g., Fireblocks, Anchorage" />
         </label>
         <label><input type="radio" name="segregation" value="full_ins" required> Yes, fully segregated with insurance</label>
@@ -151,6 +152,7 @@
       <!-- 4. Legal Issues -->
       <fieldset>
         <legend>4. Legal Issues</legend>
+        <p class="muted">Any ongoing legal/regulatory proceedings or violations in past 3 years?</p>
         <label><input type="radio" name="legal_issues" value="none" required> No issues</label>
         <label><input type="radio" name="legal_issues" value="minor"> Minor issues (resolved)</label>
         <label><input type="radio" name="legal_issues" value="active"> Active proceedings</label>
@@ -183,6 +185,7 @@
       <!-- 6. Security Framework -->
       <fieldset>
         <legend>6. Security Framework</legend>
+        <p class="muted">Do you follow cybersecurity standards and conduct regular audits?</p>
         <label><input type="radio" name="security_framework" value="cert" required> Yes, certified framework (ISO 27001/SOC 2)</label>
         <label><input type="radio" name="security_framework" value="internal"> Internal standards, regular audits</label>
         <label><input type="radio" name="security_framework" value="ext_no_cert"> External audit without certification</label>
@@ -205,6 +208,7 @@
       <!-- 7. Management Experience -->
       <fieldset>
         <legend>7. Management Experience</legend>
+        <p class="muted">Do key executives have financial services/compliance experience?</p>
         <label><input type="radio" name="mgmt_exp" value="extensive" required> Yes, extensive regulatory experience</label>
         <label><input type="radio" name="mgmt_exp" value="some"> Some financial services background</label>
         <label><input type="radio" name="mgmt_exp" value="limited"> Limited relevant experience</label>
@@ -222,6 +226,7 @@
       <!-- 8. Banking & Key Vendors -->
       <fieldset>
         <legend>8. Banking & Key Vendors</legend>
+        <p class="muted">Do you have established banking relationships and compliance vendors?</p>
         <label><input type="radio" name="banking" value="tier1" required> Yes, tier-1 banks and compliance tools</label>
         <label><input type="radio" name="banking" value="regional"> Regional banks, basic tools</label>
         <label><input type="radio" name="banking" value="limited"> Limited banking, developing tools</label>
@@ -344,6 +349,7 @@
   </script>
 </body>
 </html>
+
 
 
 
