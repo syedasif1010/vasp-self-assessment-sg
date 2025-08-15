@@ -3,55 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Crypto VASP Compliance Self‑Assessment</title>
-  <meta name="description" content="Crypto VASP Compliance Self‑Assessment">
+  <title>Crypto VASP Compliance Self-Assessment</title>
+  <meta name="description" content="Crypto VASP Compliance Self-Assessment">
   <style>
     :root{
-      --bg:#0b1220; --card:#111a2e; --ink:#e6ebff; --muted:#98a2b3; --brand:#4f46e5; --ring: 0 0 0 3px rgba(79,70,229,.35);
+      /* Light brand theme */
+      --bg:#f5f7fb;          /* page background */
+      --card:#ffffff;        /* card background */
+      --ink:#111827;         /* primary text (near-black) */
+      --muted:#6b7280;       /* secondary text */
+      --brand:#0A84FF;       /* de Risk blue (feel free to tweak) */
+      --brand-deep:#0656c7;
+      --ok:#16a34a; --warn:#f59e0b; --bad:#ef4444;
+      --ring:0 0 0 3px rgba(10,132,255,.30);
+      --border:#e5e7eb;
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;}
-    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial; background:linear-gradient(180deg,#0b1220,#0b1220 40%,#0e1630 100%); color:var(--ink);}
-    .wrap{max-width:1100px;margin:40px auto;padding:0 16px 80px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
-    h1{font-size:clamp(1.4rem,2.2vw,2rem);margin:0;letter-spacing:.2px}
-    .badge{font-size:.75rem;color:#cbd5e1;background:#1f2937;border:1px solid #334155;padding:6px 10px;border-radius:999px}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.0)); border:1px solid #243352; border-radius:18px; padding:18px 18px; box-shadow:0 10px 24px rgba(0,0,0,.25)}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
-
-    fieldset{border:1px solid #243352;border-radius:14px;padding:14px;margin:0}
-    legend{padding:0 8px;color:#c7d2fe; font-weight:600}
-    label{display:block; margin:10px 0; line-height:1.35}
-    input[type="text"], input[type="number"], input[type="date"], textarea, select{
-      width:100%; background:#0b1220; color:var(--ink); border:1px solid #223153; border-radius:10px; padding:10px 12px; outline:none;
+    body{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      background:var(--bg);
+      color:var(--ink);
     }
-    input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, textarea:focus, select:focus{ box-shadow:var(--ring); border-color:var(--brand)}
+    .wrap{max-width:1100px;margin:32px auto 80px;padding:0 16px;}
+    /* Logo */
+    .logo{display:flex;justify-content:center;align-items:center;margin:10px 0 6px}
+    .logo img{max-height:64px;height:auto;width:auto}
+    /* Top heading */
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      background:linear-gradient(180deg,#fff, #fafbff);
+      border:1px solid var(--border);
+      border-radius:16px;padding:14px 16px;margin:14px 0 18px;
+    }
+    h1{font-size:clamp(1.25rem,2.2vw,1.75rem);margin:0;letter-spacing:.2px}
+    .badge{font-size:.75rem;color:#0b5bd3;background:#e6f0ff;border:1px solid #cfe2ff;padding:6px 10px;border-radius:999px}
+
+    /* Card + form */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px 18px;
+      box-shadow:0 10px 24px rgba(10,50,120,.06);
+    }
+    fieldset{border:1px solid var(--border);border-radius:14px;padding:14px;margin:0 0 14px}
+    legend{padding:0 8px;color:var(--brand-deep); font-weight:700}
+    label{display:block; margin:10px 0; line-height:1.35}
+    p.muted{color:var(--muted); margin:6px 0 10px}
+    input[type="text"], input[type="number"], input[type="date"], textarea, select{
+      width:100%; background:#fff; color:var(--ink);
+      border:1px solid #d1d5db; border-radius:10px; padding:10px 12px; outline:none;
+    }
+    input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus,
+    textarea:focus, select:focus{ box-shadow:var(--ring); border-color:var(--brand)}
     .row{display:grid; gap:10px; grid-template-columns:1fr}
     @media(min-width:720px){.row.two{grid-template-columns:1fr 1fr}}
-    .muted{color:var(--muted); font-size:.9rem}
 
-    .controls{position:sticky; bottom:0; inset-inline:0; background:linear-gradient(180deg,rgba(11,18,32,0),rgba(11,18,32,.85)); padding:14px 0 0; margin-top:18px}
+    /* Controls */
+    .controls{position:sticky; bottom:0; inset-inline:0; background:linear-gradient(180deg,rgba(245,247,251,0),rgba(245,247,251,.95)); padding:14px 0 0; margin-top:18px}
     .bar{display:flex; gap:10px; flex-wrap:wrap}
-    button{appearance:none;border:1px solid #334155; background:#0b1220;color:var(--ink); padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600}
-    button.primary{background:var(--brand); border-color:transparent}
+    button{
+      appearance:none;border:1px solid #cfd6e4; background:#fff;color:var(--ink);
+      padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600
+    }
+    button.primary{background:var(--brand); border-color:transparent; color:#fff}
     button:focus{box-shadow:var(--ring)}
 
-    .footer{margin-top:18px; font-size:.85rem; color:#cbd5e1}
+    .footer{margin-top:18px; font-size:.85rem; color:#374151}
+
+    /* Links color inside page (if any) */
+    a{color:var(--brand-deep)}
+    a:hover{text-decoration:underline}
 
     @media print{
       body{background:#fff;color:#000}
       .wrap{margin:0;max-width:none;padding:0}
       .controls{display:none}
       .card{box-shadow:none;border:1px solid #999}
+      header, .logo{border:0;box-shadow:none}
     }
   </style>
 </head>
 <body>
+  <!-- Company logo -->
+  <div class="logo">
+    <img src="2.png" alt="de Risk Partners Logo">
+  </div>
+
   <div class="wrap">
     <header>
-      <h1>Crypto VASP Compliance Self‑Assessment</h1>
+      <h1>Crypto VASP Compliance Self-Assessment</h1>
       <span class="badge" id="saveState">Draft not saved</span>
     </header>
 
@@ -84,7 +126,7 @@
         </div>
       </section>
 
-            <!-- 1. Regulatory Licenses -->
+      <!-- 1. Regulatory Licenses -->
       <fieldset>
         <legend>1. Regulatory Licenses</legend>
         <p class="muted">Do you hold required licenses/registrations in your operating jurisdictions?</p>
@@ -129,7 +171,9 @@
       <!-- 3. Customer Fund Protection -->
       <fieldset>
         <legend>3. Customer Fund Protection</legend>
-        <p class="muted">Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?</p>
+        <p class="muted">
+          Are customer funds segregated and protected? Are funds held directly or via a third-party custodian (e.g., Fireblocks, Anchorage)?
+        </p>
         <label>Custodian (if any)
           <input name="custodian" type="text" placeholder="e.g., Fireblocks, Anchorage" />
         </label>
@@ -164,7 +208,7 @@
       <fieldset>
         <legend>5. Geographic Restrictions</legend>
         <p class="muted">Do you block prohibited jurisdictions (US, sanctioned countries)?</p>
-        <label><input type="radio" name="geo_block" value="full" required> Yes, comprehensive geo‑blocking</label>
+        <label><input type="radio" name="geo_block" value="full" required> Yes, comprehensive geo-blocking</label>
         <label><input type="radio" name="geo_block" value="partial"> Partial restrictions</label>
         <label><input type="radio" name="geo_block" value="none"> No restrictions</label>
         <label><input type="radio" name="geo_block" value="dev"> Under development</label>
@@ -173,7 +217,7 @@
           <input name="prohibited_list" type="text" placeholder="e.g., US, DPRK, Iran" />
         </label>
         <div>
-          <span class="muted">Geo‑blocking enforced via:</span>
+          <span class="muted">Geo-blocking enforced via:</span>
           <label><input type="checkbox" name="enforce_ip" value="ip"> IP filtering</label>
           <label><input type="checkbox" name="enforce_wallet" value="wallet"> Wallet screening</label>
           <label><input type="checkbox" name="enforce_list" value="list"> List enforcement tools</label>
@@ -225,7 +269,7 @@
       <fieldset>
         <legend>8. Banking & Key Vendors</legend>
         <p class="muted">Do you have established banking relationships and compliance vendors?</p>
-        <label><input type="radio" name="banking" value="tier1" required> Yes, tier‑1 banks and compliance tools</label>
+        <label><input type="radio" name="banking" value="tier1" required> Yes, tier-1 banks and compliance tools</label>
         <label><input type="radio" name="banking" value="regional"> Regional banks, basic tools</label>
         <label><input type="radio" name="banking" value="limited"> Limited banking, developing tools</label>
         <label><input type="radio" name="banking" value="none"> No stable banking relationships</label>
@@ -238,7 +282,7 @@
             <select name="ramps">
               <option value="">— Select —</option>
               <option value="internal">Internal</option>
-              <option value="partner">Third‑party partner</option>
+              <option value="partner">Third-party partner</option>
             </select>
           </label>
         </div>
@@ -304,7 +348,7 @@
           <button type="button" id="printBtn">Save/Print PDF</button>
           <button type="reset" id="resetBtn">Reset</button>
         </div>
-        <div class="footer">Disclaimer: This self‑assessment is for informational purposes only and does not constitute legal advice.</div>
+        <div class="footer">Disclaimer: This self-assessment is for informational purposes only and does not constitute legal advice.</div>
       </div>
     </form>
   </div>
@@ -315,6 +359,7 @@
     const exportBtn = document.getElementById('exportBtn');
     const printBtn = document.getElementById('printBtn');
 
+    // --- Autosave draft in localStorage ---
     const KEY = 'vasp_self_assessment_v1';
     function saveDraft(){ localStorage.setItem(KEY, JSON.stringify(Object.fromEntries(new FormData(form)))); saveBadge.textContent='Draft saved'; }
     function loadDraft(){ const raw=localStorage.getItem(KEY); if(!raw) return; const data=JSON.parse(raw); for(const [k,v] of Object.entries(data)){ const el=form.elements[k]; if(!el) continue; if(el instanceof RadioNodeList){
@@ -331,6 +376,7 @@
     form.addEventListener('input', ()=>{ saveDraft(); });
     document.getElementById('resetBtn').addEventListener('click', ()=>{ setTimeout(()=>{ clearDraft(); }, 0); });
 
+    // --- Export JSON ---
     exportBtn.addEventListener('click', ()=>{
       const data = Object.fromEntries(new FormData(form));
       data.__exportedAt = new Date().toISOString();
@@ -341,12 +387,16 @@
       document.body.appendChild(a); a.click(); a.remove();
     });
 
+    // --- Print / Save PDF ---
     printBtn.addEventListener('click', ()=>{ window.print(); });
 
+    // Load draft on first paint
     loadDraft();
   </script>
 </body>
 </html>
+
+
 
 
 
